@@ -36,7 +36,10 @@ if (isError(avg2result2)) {
 
 // declarative
 
-const handleError = <T, E, G>(value: T | Error, onError: (error: Error) => E, onValue: (value: T) => G) => value instanceof Error ? onError(value) : onValue(value)
+const handleError = <T, E, G>(value: T | Error, onError: (error: Error) => E, onValue: (value: T) => G) =>
+    value instanceof Error
+        ? onError(value)
+        : onValue(value)
 
 assert.equal(
     handleError(
